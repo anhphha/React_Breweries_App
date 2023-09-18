@@ -1,0 +1,20 @@
+/* Apply styles to the header element */
+header {
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  padding: 20px; /* Padding around the header content */
+  text-align: center; /* Center-align text within the header */
+  font-size: 24px; /* Font size */
+  font-weight: bold; /* Font weight */
+}
+
+/* Style links within the header (e.g., navigation links) */
+header a {
+  text-decoration: none; /* Remove underlines from links */
+  color: #ffcc00; /* Link text color */
+}
+
+/* Change link color on hover */
+header a:hover {
+  color: #fff; /* Hovered link text color */
+}

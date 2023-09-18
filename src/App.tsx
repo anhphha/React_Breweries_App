@@ -1,16 +1,25 @@
 import React from "react";
-// import Header from "./components/Header";
-// import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BreweryList from "./components/BreweryList";
-// import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
 
 const App = () => {
 
   return (
-    <div className="App">
-      <BreweryList/>
-    </div>
+    <Router>
+      <Header />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/brewerylist" element={<BreweryList />} />
+      </Routes>
+      <Footer />
+    </Router>
+
   );
 };
 

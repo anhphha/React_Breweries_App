@@ -1,0 +1,30 @@
+/* NavBar.css */
+
+/* Style the navbar container */
+.navbar {
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  padding: 10px; /* Padding around the navbar */
+}
+/* Style the navigation list */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+/* Style the list items (navigation items) */
+.navbar li {
+  margin-right: 20px;
+}
+
+/* Style the anchor links (navigation links) */
+.navbar a {
+  text-decoration: none; /* Remove underlines from links */
+  color: #fff; /* Link text color */
+}
+
+/* Change link color on hover */
+.navbar a:hover {
+  color: #ffcc00; /* Hovered link text color */
+}

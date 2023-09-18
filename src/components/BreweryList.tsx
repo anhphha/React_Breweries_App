@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Brewery } from "../types/type";
 
-const BreweryList = () => {
-  const [breweries, setBreweries] = useState([]);
+const BreweryList: React.FC = () => {
+  const [breweries, setBreweries] = useState<Brewery[]>([]);
 
   useEffect(() => {
     fetchData();
@@ -13,7 +14,7 @@ const BreweryList = () => {
       const response = await fetch(
         "https://api.openbrewerydb.org/v1/breweries"
       );
-      const data = await response.json();
+      const data: Brewery[] = await response.json();
       setBreweries(data);
     } catch (error) {
       console.error("Error fetching all Breweries: ", error);
