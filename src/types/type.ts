@@ -16,3 +16,8 @@ export interface Brewery {
   state: string;
   street: string;
 }
+
+export interface BreweryDetailsProps {
+  breweryId: string;
+  brewery: Brewery;
+}
