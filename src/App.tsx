@@ -1,23 +1,41 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import BreweryList from "./components/BreweryList";
+import React from 'react'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Breweries from "./components/Breweries";
 import SingleBrewery from "./components/SingleBrewery";
 import Home from "./components/Home";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
+import ErrorPage from "./pages/ErrorPage";
+import Root from "./pages/Root";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+      {
+        path: "breweries",
+        element: <Breweries />,
+      },
+      {
+        path: "breweries/:id",
+        element: <SingleBrewery />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/brewerylist/:id" element={<SingleBrewery />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 };
 

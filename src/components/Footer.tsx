@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
             </div>
             <div className="footer-right">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Breweries</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/breweries">Breweries</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
         </div>

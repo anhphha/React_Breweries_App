@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Brewery } from "../types/type";
 import { baseURL } from "../services/brewery";
 
-const BreweryList: React.FC = () => {
+const Breweries: React.FC = () => {
   const [breweries, setBreweries] = useState<Brewery[]>([]);
 
   useEffect(() => {
-    fetchData();
+    fetchData()
   }, []);
 
   // Fetch whole data from the API
@@ -40,4 +40,4 @@ const BreweryList: React.FC = () => {
   );
 };
 
-export default BreweryList;
+export default Breweries;
