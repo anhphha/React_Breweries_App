@@ -1,5 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { FormData } from "../types/type";
+import "../styles/Contact.css";
+import Button from "@mui/material/Button";
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -26,12 +28,13 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Contact Us</h1>
+    <div className="contact-container">
+      <h1 className="contact-heading">Contact Us</h1>
       <p>
         Feel free to get in touch with us using the contact information below:
       </p>
-      <address>
+      <br />
+      <address className="contact-address">
         <strong>Email:</strong> contact@example.com
         <br />
         <strong>Phone:</strong> (123) 456-7890
@@ -39,16 +42,19 @@ const ContactPage: React.FC = () => {
         <strong>Address:</strong> 123 Main Street, City, Country
         <br />
       </address>
-
+      <br />
       <h2>Contact Form</h2>
       {submitted ? (
         <p>Thank you for your message!</p>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="name">Name:</label>
+            <label className="contact-label" htmlFor="name">
+              Name:
+            </label>
             <br />
             <input
+              className="contact-input"
               type="text"
               id="name"
               name="name"
@@ -58,9 +64,12 @@ const ContactPage: React.FC = () => {
             />
           </div>
           <div>
-            <label htmlFor="email">Email:</label>
+            <label className="contact-label" htmlFor="email">
+              Email:
+            </label>
             <br />
             <input
+              className="contact-input"
               type="email"
               id="email"
               name="email"
@@ -70,9 +79,12 @@ const ContactPage: React.FC = () => {
             />
           </div>
           <div>
-            <label htmlFor="message">Message:</label>
+            <label className="contact-label" htmlFor="message">
+              Message:
+            </label>
             <br />
             <textarea
+              className="contact-input"
               id="message"
               name="message"
               rows={4}
@@ -81,7 +93,14 @@ const ContactPage: React.FC = () => {
               //   required
             />
           </div>
-          <button type="submit">Submit</button>
+          <Button
+            size="large"
+            className="contact-button"
+            variant="contained"
+            type="submit"
+          >
+            Submit
+          </Button>
         </form>
       )}
     </div>

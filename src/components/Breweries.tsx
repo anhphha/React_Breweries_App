@@ -44,7 +44,7 @@ const Breweries: React.FC = () => {
         <br />
 
         {/* Sorting dropdown */}
-        <Box sx={{ inlineSize: 200 }}>
+        <Box sx={{ inlineSize: 150 }}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Sort By</InputLabel>
             <Select

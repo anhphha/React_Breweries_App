@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Brewery } from "../types/type";
 import { useNavigate, useParams } from "react-router-dom";
 import { baseURL } from "../services/brewery";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
+import "../styles/SingleBrewery.css";
 
 const SingleBrewery: React.FC = () => {
   const [brewery, setBrewery] = useState<Brewery | null>(null);
@@ -31,20 +32,46 @@ const SingleBrewery: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="single-brewery-container">
+      <div className="brewery-name">{brewery.name}</div>
+      <br />
       <div>
-        <h1>{brewery.name}</h1>
-        <Button variant="contained" onClick={() => navigate("/breweries")}>Back</Button>
+        <Button
+          size="large"
+          className="back-button"
+          variant="contained"
+          onClick={() => navigate("/breweries")}
+        >
+          Back
+        </Button>
       </div>
-      <br/>
-      <div>Brewery Type: {brewery.brewery_type}</div>
-      <div>Street: {brewery.street}</div>
-      <div>City: {brewery.city}</div>
-      <div>Country: {brewery.country}</div>
-      <div>Website URL: {brewery.website_url}</div>
-      <div>Phone: {brewery.phone}</div>
-      <br/>
-      <div>
+      <br />
+      <div className="brewery-details">
+        <strong>Brewery Type:</strong> {brewery.brewery_type}
+      </div>
+      <br />
+      <div className="brewery-details">
+        <strong>Street:</strong> {brewery.street}
+      </div>
+      <br />
+      <div className="brewery-details">
+        <strong>City:</strong> {brewery.city}
+      </div>
+      <br />
+      <div className="brewery-details">
+        <strong>Country:</strong> {brewery.country}
+      </div>
+      <br />
+      <div className="brewery-details">
+        <strong>Website URL:</strong> {brewery.website_url}
+      </div>
+      <br />
+      <div className="brewery-details">
+        <strong>Phone:</strong> {brewery.phone}
+      </div>
+      <br />
+
+      <div className="google-maps">
         <iframe
           src={`//maps.google.com/maps?q=${brewery.latitude},${brewery.longitude}&z=15&output=embed`}
           width="600"

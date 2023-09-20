@@ -15,7 +15,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import TablePagination from "@mui/material/TablePagination";
-import Breweries from "./Breweries";
 
 const columns: readonly Column[] = [
   { id: "name", label: "Name", minWidth: 170 },
@@ -99,9 +98,9 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ data }) => {
           )}
         />
       </div>
-
+      <br />
       <div className="Table">
-        <Paper elevation={10} sx={{ width: '80%'}}>
+        <Paper elevation={10} sx={{ width: "105%" }}>
           <TableContainer sx={{ blockSize: 600 }}>
             <Table
               sx={{ inlineSize: 900 }}
@@ -157,7 +156,7 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ data }) => {
             </Table>
           </TableContainer>
           <TablePagination
-            rowsPerPageOptions={[5, 10, 15, { label: 'All', value: -1 }]}
+            rowsPerPageOptions={[5, 10, 15, { label: "All", value: -1 }]}
             component="div"
             count={data.length}
             rowsPerPage={rowsPerPage}

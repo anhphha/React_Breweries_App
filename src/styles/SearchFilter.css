@@ -1,11 +1,19 @@
-/* ContentFilter.css */
-
-/* Container for the filter input and list */
-.container {
+/* Style for the content filter */
+.ContentFilter {
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  margin-block-start: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Style for the table container */
+.Table {
+  width: 100%;
+}
+
+/* Style for the table header (bold text) */
+.bold-header {
+  font-weight: bold;
 }
 
 /* Style the filter input */
@@ -19,6 +27,3 @@
   margin-block-end: 10px;
 }
 
-.bold-header {
-  font-weight: bold;
-}

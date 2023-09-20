@@ -1,0 +1,30 @@
+/* Home.css */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 100vh;
+  /* height: 100vh; Make the container full viewport height */
+}
+
+.home-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333; /* Text color */
+}
+
+.home-subtitle {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #555; /* Text color */
+}
+
+.home-author {
+  font-size: 20px;
+  text-align: center;
+  color: #777; /* Text color */
+}
