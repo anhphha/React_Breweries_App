@@ -1,7 +1,8 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { FormData } from "../types/type";
 import "../styles/Contact.css";
 import Button from "@mui/material/Button";
+import { GoogleLogin, GoogleLoginResponse } from "react-google-login";
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -10,6 +11,21 @@ const ContactPage: React.FC = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [googleUser, setGoogleUser] = useState<GoogleLoginResponse | null>(
+    null
+  );
+
+  const handleGoogleResponse = (response: GoogleLoginResponse | any) => {
+    if (response.profileObj) {
+      const { name, email } = response.profileObj;
+      setFormData({
+        ...formData,
+        name,
+        email,
+      });
+    }
+    setGoogleUser(response);
+  };
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -103,6 +119,16 @@ const ContactPage: React.FC = () => {
           </Button>
         </form>
       )}
+      <br />
+      {/* Google Sign-In Button */}
+      <GoogleLogin
+        clientId="343752711966-722i2ocqlkvritks3v31sqkihrn08mdn.apps.googleusercontent.com"
+        buttonText="Login with Google"
+        onSuccess={handleGoogleResponse}
+        onFailure={handleGoogleResponse}
+        cookiePolicy={"single_host_origin"}
+        isSignedIn={true}
+      />
     </div>
   );
 };
