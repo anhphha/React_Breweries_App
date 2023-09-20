@@ -14,7 +14,7 @@ const Breweries: React.FC = () => {
   //Fetch whole data from the API
   const fetchData = async () => {
     try {
-      const response = await fetch(`${baseURL}`);
+      const response = await fetch(`${baseURL}/`);
       const data: Brewery[] = await response.json();
       setBreweries(data);
     } catch (error) {

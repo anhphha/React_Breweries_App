@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Brewery } from "../types/type";
 import { useNavigate, useParams } from "react-router-dom";
 import { baseURL } from "../services/brewery";
+import Button from '@mui/material/Button';
 
 const SingleBrewery: React.FC = () => {
   const [brewery, setBrewery] = useState<Brewery | null>(null);
@@ -33,16 +34,16 @@ const SingleBrewery: React.FC = () => {
     <div>
       <div>
         <h1>{brewery.name}</h1>
-        <button onClick={() => navigate("/breweries")}>Back</button>
+        <Button variant="contained" onClick={() => navigate("/breweries")}>Back</Button>
       </div>
-
+      <br/>
       <div>Brewery Type: {brewery.brewery_type}</div>
       <div>Street: {brewery.street}</div>
       <div>City: {brewery.city}</div>
       <div>Country: {brewery.country}</div>
       <div>Website URL: {brewery.website_url}</div>
       <div>Phone: {brewery.phone}</div>
-
+      <br/>
       <div>
         <iframe
           src={`//maps.google.com/maps?q=${brewery.latitude},${brewery.longitude}&z=15&output=embed`}

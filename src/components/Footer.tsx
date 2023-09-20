@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="footer">
         <div className="footer-content">
             <div className="footer-left">
-                <p>&copy; {new Date().getFullYear()} Open Brewery</p>
+                <p>&copy; {new Date().getFullYear()} Open Breweries</p>
             </div>
             <div className="footer-right">
                 <ul>

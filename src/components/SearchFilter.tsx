@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { SearchFilterProps } from "../types/type";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "../styles/SearchFilter.css";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
+import Autocomplete from "@mui/material/Autocomplete";
 
 const SearchFilter: React.FC<SearchFilterProps> = ({ data }) => {
   const [filteredTerm, setFilteredTerm] = useState<string>("");
@@ -41,12 +46,23 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ data }) => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search by name..."
-        value={filteredTerm}
-        onChange={handleInputChange}
+    <Stack spacing={2} sx={{ inlineSize: 300 }}>
+      <Autocomplete
+        freeSolo
+        id="free-solo-2-demo"
+        disableClearable
+        options={filteredData.map((brewery) => brewery.name)}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Search input"
+            InputProps={{
+              ...params.InputProps,
+              type: "search",
+            }}
+            onChange={handleInputChange}
+          />
+        )}
       />
       <ul>
         {filteredData.map((brewery) => (
@@ -58,13 +74,16 @@ const SearchFilter: React.FC<SearchFilterProps> = ({ data }) => {
             <p>Country: {brewery.country}</p>
             <p>Longitude: {brewery.longitude}</p>
             <p>Latitude: {brewery.latitude}</p>
-            <button onClick={() => handleBreweryClick(brewery.id)}>
+            <Button
+              variant="contained"
+              onClick={() => handleBreweryClick(brewery.id)}
+            >
               View Details
-            </button>
+            </Button>
           </li>
         ))}
       </ul>
-    </div>
+    </Stack>
   );
 };
 

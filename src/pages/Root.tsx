@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 const Root: React.FC = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <NavBar />
       <div className="outlet">
         <Outlet />
