@@ -26,3 +26,11 @@ export interface FormData {
 export interface SearchFilterProps {
   data: Brewery[];
 }
+
+export interface Column {
+  id: 'name' | 'type' | 'city' | 'state' | 'country' | 'details';
+  label: string;
+  minWidth?: number;
+  align?: 'right';
+  format?: (value: number) => string;
+}

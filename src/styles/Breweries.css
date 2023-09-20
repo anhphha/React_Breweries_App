@@ -1,8 +1,8 @@
 .breweries {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Start content from the top */
-  align-items: center;
+  justify-content: space-between; /* Start content from the top */
+  align-items: left;
   min-block-size: 100vh; /* Minimum height to fill the viewport */
   padding: 20px;
 }
