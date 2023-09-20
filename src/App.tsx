@@ -5,9 +5,10 @@ import {
 } from "react-router-dom";
 import Breweries from "./components/Breweries";
 import SingleBrewery from "./components/SingleBrewery";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import Root from "./pages/Root";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
       {
         path: "breweries",

@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Brewery } from "../types/type";
 import { baseURL } from "../services/brewery";
+import SearchFilter from "./SearchFilter";
+import "../styles/Breweries.css";
 
 const Breweries: React.FC = () => {
   const [breweries, setBreweries] = useState<Brewery[]>([]);
 
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, []);
 
-  // Fetch whole data from the API
+  //Fetch whole data from the API
   const fetchData = async () => {
     try {
       const response = await fetch(`${baseURL}`);
@@ -21,22 +23,12 @@ const Breweries: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1> List of Breweries</h1>
-      <ul>
-        {breweries.map((brewery) => (
-          <li key={brewery.id}>
-            <h2>{brewery.name}</h2>
-            <p>Type: {brewery.brewery_type}</p>
-            <p>City: {brewery.city}</p>
-            <p>State: {brewery.state}</p>
-            <p>Country: {brewery.country}</p>
-            <p>Longitude: {brewery.longitude}</p>
-            <p>Latitude: {brewery.latitude}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className="breweries">
+        <h1>Brewery Search</h1>
+        <SearchFilter data={breweries} />
+      </div>
+    </>
   );
 };
 

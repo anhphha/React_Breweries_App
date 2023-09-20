@@ -17,7 +17,12 @@ export interface Brewery {
   street: string;
 }
 
-export interface BreweryDetailsProps {
-  breweryId: string;
-  brewery: Brewery;
+export interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export interface SearchFilterProps {
+  data: Brewery[];
 }
