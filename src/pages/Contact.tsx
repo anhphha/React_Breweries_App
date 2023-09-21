@@ -1,7 +1,8 @@
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { FormData } from "../types/type";
 import "../styles/Contact.css";
 import Button from "@mui/material/Button";
+import { GoogleLogin, GoogleLoginResponse } from "react-google-login";
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -10,6 +11,7 @@ const ContactPage: React.FC = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState<boolean>(false);
+
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -103,6 +105,7 @@ const ContactPage: React.FC = () => {
           </Button>
         </form>
       )}
+      <br />
     </div>
   );
 };
