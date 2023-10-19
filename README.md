@@ -25,4 +25,4 @@ I have fulfilled these requirements:
 
 - [x] 8. Create a contact form so that user can send question along with their contact information.
 
-- [x] 9. Use Google-login option to pre-fill the contact form for user (no need to send form data anywhere, just need to fill the form. Submit button can just alert user of successful submission).
+- [ ] 9. Use Google-login option to pre-fill the contact form for user (no need to send form data anywhere, just need to fill the form. Submit button can just alert user of successful submission).
