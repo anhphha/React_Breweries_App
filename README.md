@@ -5,7 +5,8 @@
 
 ## Screenshots
 
-| <img src="images/React_Breweries_1.png"  width="1000"/> | <img src="images/React_Breweries_2.png"  width="1000"/> |
+<img src="images/React_Breweries_1.png"  width="1000"/>
+<img src="images/React_Breweries_2.png"  width="1000"/>
 
 ## Requirements
 Fetch, display, and search for brewery companies from the given API endpoint, using React and TypeScript
