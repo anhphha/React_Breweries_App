@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import { FormData } from "../types/type";
 import "../styles/Contact.css";
 import Button from "@mui/material/Button";
